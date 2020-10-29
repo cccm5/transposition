@@ -1,0 +1,5 @@
+name: Transposition
+version: ${project.version}
+main: dev.cccm5.transposition.Transposition
+api-version: 1.16
+authors: [ cccm5 ]

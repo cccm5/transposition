@@ -1,6 +1,7 @@
 package dev.cccm5.transposition.util.voxel;
 
 import dev.cccm5.transposition.math.IntegralPoint;
+import org.jetbrains.annotations.NotNull;
 
 public class EmptyVoxelMask implements VoxelMask{
     private EmptyVoxelMask(){}
@@ -8,27 +9,27 @@ public class EmptyVoxelMask implements VoxelMask{
     public static final EmptyVoxelMask EMPTY_MASK = new EmptyVoxelMask();
 
     @Override
-    public boolean contains(IntegralPoint point) {
+    public boolean contains(@NotNull IntegralPoint point) {
         return false;
     }
 
     @Override
-    public boolean intersects(VoxelMask other) {
+    public boolean intersects(@NotNull VoxelMask other) {
         return false;
     }
 
     @Override
-    public boolean excludes(VoxelMask other) {
+    public boolean excludes(@NotNull VoxelMask other) {
         return false;
     }
 
     @Override
-    public boolean isSubset(VoxelMask other) {
+    public boolean isSubset(@NotNull VoxelMask other) {
         return true;
     }
 
     @Override
-    public boolean isSuperset(VoxelMask other) {
+    public boolean isSuperset(@NotNull VoxelMask other) {
         return other.isEmpty();
     }
 
@@ -38,27 +39,27 @@ public class EmptyVoxelMask implements VoxelMask{
     }
 
     @Override
-    public VoxelMask subtract(VoxelMask other) {
+    public @NotNull VoxelMask subtract(@NotNull VoxelMask other) {
         return this;
     }
 
     @Override
-    public VoxelMask add(VoxelMask other) {
+    public @NotNull VoxelMask add(@NotNull VoxelMask other) {
         return other;
     }
 
     @Override
-    public VoxelMask intersection(VoxelMask other) {
+    public @NotNull VoxelMask intersection(@NotNull VoxelMask other) {
         return other;
     }
 
     @Override
-    public VoxelMask symmetricDifference(VoxelMask other) {
+    public @NotNull VoxelMask symmetricDifference(@NotNull VoxelMask other) {
         return other;
     }
 
     @Override
-    public VoxelMask boundingMask() {
+    public @NotNull VoxelMask boundingMask() {
         return this;
     }
 }
